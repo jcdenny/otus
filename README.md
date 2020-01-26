@@ -1,6 +1,6 @@
 ### Otus Operations Take Home
 
-##### Practical
+## Practical
 
 ### Prerequisites
 
@@ -120,52 +120,52 @@ kubectl apply -f hello-k8s/ingress.yaml
 
 ## Test
 
-- Go to http://YOUR_DNS that you set up previously. You should get a valid cert.
+- Go to https://YOUR_DNS that you set up previously. You should get a valid cert.
 
-##### Written
+## Written
 
 ### Site Reliability
-You start a job at Otus and I ask you to show how we are doing in terms of platform
-performance and reliability. How are you going to do this? Please be specific.
-```
+**You start a job at Otus and I ask you to show how we are doing in terms of platform
+performance and reliability. How are you going to do this? Please be specific.**
+
 I would first get both current and historical data from APM and analze that data. Some metrics that I would look at include apdex (if available), errors, and transaction duration. 
 
 I would also look at past platform issues that had been reported and documented to see what types of issues have come up in the past and how they were resolved. 
 
 Lastly I would be interested in looking at how the k8s clusters are holding up against load. I would look in both promethus and cloudwatch metrics for this info.
-```
+
 
 ### Security
-Explain what sort of initial security sweep you would make of the prod infra during your
-first month? Explain how you would prioritize the work and go after it.
-```
+**Explain what sort of initial security sweep you would make of the prod infra during your
+first month? Explain how you would prioritize the work and go after it.**
+
 One tool that I am very fond of for AWS account related security is cloudsploit. This tool does periodic scans of the account and reports on security best practices that aren't being met. Using this info I would update Terraform and apply to the account/environment with the corrections.
 
 To go along with this I would have a look at IAM users, policies and roles to see who has what access and the type of access they have.
 
 To get an idea of platform security I would setup and run owasp zap attack proxy against a dev/preprod instance of the platform. I've had good luck with this tool in the past.
 
-```
+
 
 ### Ramping up
-Explain what an ideal 30/60/90 day plan looks like for you as you start a new role with
-Otus. This is important since we are small and you will need to self-direct most days.
-```
-30 Day Plan:
+**Explain what an ideal 30/60/90 day plan looks like for you as you start a new role with
+Otus. This is important since we are small and you will need to self-direct most days.**
+
+*30 Day Plan:
 Gather as much info as I can around processes, infrastructure overview, support issues, CICD process, development workflow, people and their roles, more detailed info on the 2020 roadmap, etc... 
 
 Given our conversation I think I could provide some help with Terraform right out of the gate.
 
-60 Day Plan:
+*60 Day Plan:
 I would like to have a good understanding of the platform and potentially run through the process of deploying the platform to a seperate k8s cluster or namespace.
 
 Also, decide on what some of the higher priority items are on the roadmap. One that caught my eye that I would consider higher priority (given my current understanding) would be way of handling secrets (vault). 
 
 Another task that was brought up was the certificate experiation issue. This to me seems like a higher priority item and I think I could contribute to the project.
 
-90 Day Plan:
+*90 Day Plan:
 I'm also very much interested in the China POC and if that is a higher priority issue I would love to be involved with that.
 
 Beyond this I would like to continue working through the roadmap as well as gather and work through any pain points that developers might have involving infrastructure/devops.
-```
+
 
