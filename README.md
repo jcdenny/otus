@@ -86,11 +86,7 @@ kubectl get pods -n cert-manager
 ```
 kubectl apply -f letsencrypt/letsencrypt.yaml
 ```
-- Create the k8s resources (deployment, service) 
-```
-kubectl apply -f hello-k8s/hello-k8s.yaml
-```
-- Update the ingress host fields
+- Update the ingress host fields in hello-k8s.yaml
 ```
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -113,11 +109,10 @@ spec:
           serviceName: hello-kubernetes
           servicePort: 80
 ```
-- Create the ingress
+- Create the k8s resources (deployment, service, hpa, ingress) 
 ```
-kubectl apply -f hello-k8s/ingress.yaml
+kubectl apply -f hello-k8s/hello-k8s.yaml
 ```
-
 ## Test
 
 - Go to https://YOUR_DNS that you set up previously. You should get a valid cert.
